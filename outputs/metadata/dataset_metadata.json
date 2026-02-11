@@ -1,0 +1,12 @@
+{
+  "dataset_name": "sklearn.datasets.load_breast_cancer",
+  "n_samples": 569,
+  "n_features": 30,
+  "target_names": [
+    "malignant",
+    "benign"
+  ],
+  "train_samples": 455,
+  "test_samples": 114,
+  "random_state": 42
+}
