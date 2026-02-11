@@ -1,6 +1,6 @@
 ---
 title: "ICS 435 Machine Learning - Assignment 1 Report"
-author: "Koiama"
+author: "Koichiro Amakasu"
 date: "February 11, 2026"
 fontsize: 10pt
 linestretch: 1
