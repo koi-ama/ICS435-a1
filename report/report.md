@@ -68,6 +68,8 @@ The following metrics were computed on the test set for each configuration:
 - Recall: proportion of true positives correctly identified
 - F1-score: harmonic mean of precision and recall
 
+In this report, Precision/Recall/F1 are computed with `benign (label=1)` as the positive class (sklearn default).
+
 ## 3.4 Source Code
 
 GitHub repository:
@@ -106,11 +108,15 @@ Best setting found for each model family:
 | KNN | n_neighbors=3 | 0.9825 | 0.9730 | 1.0000 | 0.9863 |
 | Random Forest | n_estimators=100, max_depth=None, min_samples_split=2 | 0.9561 | 0.9589 | 0.9722 | 0.9655 |
 
-Observed effects:
+Selected ablation trend samples (F1):
 
-- KNN improved when reducing neighbors from 5 to 3, producing the best overall F1.
-- Decision Tree improved with depth control (`max_depth=3`) compared with default/unbounded depth.
-- Random Forest was stable across tested depth values, with slight degradation when `min_samples_split=4`.
+| Model | Setting A | F1 A | Setting B | F1 B | Setting C | F1 C |
+|---|---|---:|---|---:|---|---:|
+| KNN | n_neighbors=3 | 0.9863 | n_neighbors=5 | 0.9655 | n_neighbors=11 | 0.9796 |
+| Decision Tree | max_depth=3 | 0.9517 | max_depth=5 | 0.9362 | max_depth=None | 0.9286 |
+| Random Forest | depth=None, split=2 | 0.9655 | depth=10, split=2 | 0.9655 | depth=10, split=4 | 0.9583 |
+
+KNN improved when reducing neighbors from 5 to 3 (best F1), Decision Tree improved with `max_depth=3`, and Random Forest remained stable with a small drop at `min_samples_split=4`.
 
 # Section 4: Conclusion
 
