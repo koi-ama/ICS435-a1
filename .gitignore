@@ -1,0 +1,12 @@
+# OS / Python
+.DS_Store
+__pycache__/
+*.pyc
+
+# Planning docs (not graded)
+docs/planAndTasks/
+
+# Generated artifacts
+outputs/
+report/ICS435_Assignment1_Report.pdf
+report/submission_checklist.md
